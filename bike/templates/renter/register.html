@@ -1,0 +1,17 @@
+{%extends 'index.html'%}
+{%block title%}
+renter register
+{%endblock title%}
+
+{%block body%}
+
+<h1>welcome to renter register page</h1>
+
+<form  method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{ERFO.as_p}}
+    {{ERPFO.as_p}}
+    <input type="submit" value="renter_register">
+</form>
+   
+{%endblock body%}

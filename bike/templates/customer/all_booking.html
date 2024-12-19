@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{%block title%}
+all booking bike
+{%endblock title%}
+
+{%block body%}
+<h1>all booking bike page {{UO.username}} </h1>
+<table class="table table-hover">
+    <thead>
+        <tr>
+          <th scope="col">BOOKING ID</th>
+          <th scope="col">BIKE NAME</th>
+          <th scope="col">PICKUP DATE</th>
+          <th scope="col">PICKUP TIME</th>
+          <th scope="col">DROP DATE</th>
+          <th scope="col">DROP TIME</th>
+          <th scope="col">STATUS</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for booking in all_booking %}
+        <tr>
+            <th>{{booking.booking_id}}</th>
+            <td>{{booking.bike_name}}</td>
+            <td>{{booking.pickup_date}}</td>
+            <td>{{booking.pickup_time}}</td>
+            <td>{{booking.drop_date}}</td>
+            <td>{{booking.drop_time}}</td>
+            <td><button>status</button></td>
+          </tr>  
+        {%endfor%}    
+      </tbody>
+  </table>
+{%endblock body%}

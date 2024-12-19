@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+{%block title%}
+customer login
+{%endblock title%}
+
+{%block body%}
+  
+  <div class="login-main">
+    <form method="post" id="login-form" class="login-form">
+        <h1>Login Form</h1>
+        {%csrf_token%}
+        <div class="input-field un">
+            <label for="un">Username</label>
+            <input type="text" placeholder="Mobile number" name="un" id="mobile">
+        </div>
+        <div class="input-field">
+            <label for="pw">Password</label>
+            <input type="password" placeholder="Password" name="pw" id="pw">
+        </div>
+        <div class="input-field">
+            <a href="{%url 'forget_password' %}">Forgot Password</a>
+            <a href="{%url 'customer_register' %}">Don't have account Create Now</a>
+        </div>
+        <div class="input-field">
+            <input type="submit" value="login">
+        </div>
+    </form>
+</div>
+
+<!-- <script>
+    // root element
+    const root=document.querySelector('.root')
+
+    // customer login form node
+    const login_form=document.querySelector('#login-form')
+
+    // create a buttom element
+    
+
+    console.log(root);
+    
+    console.log(login_form);
+    
+</script>     -->
+{%endblock body%}

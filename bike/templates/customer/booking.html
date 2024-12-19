@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%block title%}
+customer booking
+{%endblock title%}
+
+{%block body%}
+<style>
+span{
+    color: red;
+}
+</style>
+<h1>welcome to booking page <span>{{UO.username}}</span></h1>
+
+<center>
+  <div class="">
+    <h3>booking bike name is : <span>{{bike.bike_name}}</span></h3>
+    <img src="{{bike.photo.url}}" alt="" srcset="">
+  </div>
+   <div>
+    <form  method="post">
+
+        {%csrf_token%}
+        {{EBFO.as_p}}
+        <input type="submit" value="book" >
+    </form>
+   </div>
+</center>
+
+   
+{%endblock body%}

@@ -1,0 +1,16 @@
+{%extends 'index.html'%}
+{%block title%}
+renter  addbike
+{%endblock title%}
+
+{%block body%}
+
+<h1>welcome to renter addbike  page {{RO.username}}</h1>
+<form method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit" value="addbike">
+</form>
+
+   
+{%endblock body%}

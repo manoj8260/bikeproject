@@ -1,0 +1,58 @@
+{%extends 'index.html'%}
+{%block title%}
+renter home
+{%endblock title%}
+
+{%block body%}
+
+<h1>welcome to renter home page <span>{{UO.username}}</span></h1>
+<style>
+      
+span{
+    color: red;
+ }
+#brands ul, li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.card{
+  display: inline-block;
+  margin: 0px 15px;
+}
+.card  img:hover{
+  transform: scale(1.06);
+  transition: 0.5s ease-in-out;
+}
+</style>
+<div id="brands">
+    <ul>
+        {%for brand in brands %}
+         <a href="{%url 'bikedisplay' brand.company %}"><li><button>{{brand.company}}</button></li></a>
+        {%endfor%}
+    </ul>
+</div>
+<div id="bikes">
+  {%if bikes%}
+  {%for bike in bikes %}
+  <div class="card" style="width: 18rem;">
+      <img src="{{bike.photo.url}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{bike.bike_name}}</h5>
+        <h3>Price/day : {{bike.price}}</h3>
+        <p class="card-text">{{bike.desc}}</p>
+        <h4>Ratting : {{bike.ratting}}</h4>
+        <a href="{%url 'rdisplay' bike.pk%}" class="btn btn-primary">details</a>
+        <a href="" class="btn btn-danger">delete</a>
+      </div>
+    </div>
+  {%endfor%}
+  {%else%}
+  <h1>No bikes available right now </h1>
+  {%endif%}
+</div>
+
+   
+{%endblock body%}

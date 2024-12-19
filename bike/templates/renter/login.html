@@ -1,0 +1,23 @@
+{%extends 'index.html'%}
+{%block title%}
+renter login
+{%endblock title%}
+
+{%block body%}
+
+<h1>welcome to renter login page</h1>
+
+<form  method="post" >
+    {%csrf_token%}
+    <label for="un">USERNAME : </label>
+    <input type="text" id="un" name="un"> <br><br>
+
+    <label for="pw">PASSWORD : </label>
+    <input type="text" id="pw" name="pw"> <br><br>
+
+    <input type="submit" value="renter-login">
+
+   
+</form>
+   
+{%endblock body%}
